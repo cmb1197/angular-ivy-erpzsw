@@ -1,4 +1,62 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <form [formGroup]="formulario" (ngSubmit)="aceptar()">
+      <div class="col-md-12">
+        <label for="">Nombres y apellidos*</label>
+      </div>
+      <div class="col-md-12">
+        <input type="text" formControlName="nombres" />
+        <div *ngIf="formulario.invalid && !formulario.untouched">
+          <div
+            *ngIf="formulario.controls['nombres'].errors.required"
+            style="color:red; font-size:small"
+          >
+            Campo obligatorio
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="">Edad</label>
+      </div>
+      <div class="col-md-12">
+        <input type="number" formControlName="edad" />
+        <div *ngIf="formulario.invalid && !formulario.untouched">
+          <div
+            *ngIf="formulario.controls['edad'].errors.required"
+            style="color:red; font-size:small"
+          >
+            Campo obligatorio
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="">Sexo</label>
+      </div>
+      <div class="col-md-12">
+        <select formControlName="sexo">
+          <option value="" disabled selected>Seleccione</option>
+          <option value="masculino">Masculino</option>
+          <option value="masculino">Femenino</option>
+        </select>
+        <div *ngIf="formulario.invalid && !formulario.untouched">
+          <div
+            *ngIf="formulario.controls['sexo'].errors.required"
+            style="color:red; font-size:small"
+          >
+            Campo obligatorio
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="">Comentario</label>
+      </div>
+      <div class="col-md-12">
+        <input type="text" formControlName="comentario" />
+      </div>
+      <br />
+      <div class="col-md-12">
+        <button class="btn btn-success" type="submit">Aceptar</button>
+      </div>
+    </form>
+  </div>
+</div>
