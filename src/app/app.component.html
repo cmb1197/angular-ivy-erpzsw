@@ -8,7 +8,7 @@
         <input type="text" formControlName="nombres" />
         <div *ngIf="formulario.invalid && !formulario.untouched">
           <div
-            *ngIf="formulario.controls['nombres'].errors.required"
+            *ngIf="formulario.controls['nombres'].errors?.required"
             style="color:red; font-size:small"
           >
             Campo obligatorio
@@ -22,7 +22,7 @@
         <input type="number" formControlName="edad" />
         <div *ngIf="formulario.invalid && !formulario.untouched">
           <div
-            *ngIf="formulario.controls['edad'].errors.required"
+            *ngIf="formulario.controls['edad'].errors?.required"
             style="color:red; font-size:small"
           >
             Campo obligatorio
@@ -40,7 +40,7 @@
         </select>
         <div *ngIf="formulario.invalid && !formulario.untouched">
           <div
-            *ngIf="formulario.controls['sexo'].errors.required"
+            *ngIf="formulario.controls['sexo'].errors?.required"
             style="color:red; font-size:small"
           >
             Campo obligatorio

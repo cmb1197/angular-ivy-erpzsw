@@ -15,8 +15,8 @@ export class AppComponent {
   ngOnInit() {
     this.formulario = this.fb.group({
       nombres: [, Validators.compose([Validators.required])],
-      edad: ['', Validators.compose([Validators.required])],
-      sexo: ['', Validators.compose([Validators.required])],
+      edad: [, Validators.compose([Validators.required])],
+      sexo: [, Validators.compose([Validators.required])],
       comentario: ['', Validators.compose([])],
     });
   }
